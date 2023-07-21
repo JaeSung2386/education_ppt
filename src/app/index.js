@@ -1,11 +1,16 @@
 import "./style.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Headers from "../header";
+import Header from "../header";
+import Dashboard from "../dashboard";
 
 function App() {
   return (
     <div className="app">
-      <Headers />
+      <Router>
+        <Header />
+        <Dashboard />
+      </Router>
     </div>
   );
 }

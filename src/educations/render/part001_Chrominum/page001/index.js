@@ -1,5 +1,5 @@
 import { Slide, FlexBox } from "spectacle";
-import { WelcomePage } from "../../../common";
+import { WelcomePage } from "../../../../common";
 
 export default function Page001() {
   return (
