@@ -3,13 +3,18 @@
   height: 150px;
   background: #2c2c2c;
   border-radius: 20px;
-  transition: all ease 0.2s;
+  transition: 0.5s;
   border: 1px solid #333;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+.box:hover {
+  border: 1px solid #0ef;
+  box-shadow: 0 0 5px #0ef, inset 0 0 5px #0ef;
 }
 
 .education-body {
@@ -23,4 +28,49 @@
   display: flex;
   font-size: 18px;
   justify-content: space-between;
+}
+
+.icon-box {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 63px;
+  background: #333;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #666;
+  transition: .5s;
+  border: 1px solid #333;
+}
+
+.icon-box a {
+  color: #666;
+}
+
+.icon-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0ef;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.icon-box:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #0ef;
+}
+
+.icon-box:hover {
+  color: #0ef;
+  border: 1px solid #0ef;
+  box-shadow: 0 0 15px #0ef, inset 0 0 5px #0ef;
+  text-shadow: 0 0 5px #0ef;
 }
