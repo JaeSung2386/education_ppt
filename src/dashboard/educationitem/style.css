@@ -1,10 +1,11 @@
 .box {
   width: 1000px;
-  height: 150px;
-  background: #2c2c2c;
+  height: 100%;
+  background: #161616;
+  /* background: #2c2c2c; */
   border-radius: 20px;
   transition: 0.5s;
-  border: 1px solid #333;
+  border: 5px solid #333;
   color: white;
   display: flex;
   flex-direction: column;
@@ -13,7 +14,7 @@
 }
 
 .box:hover {
-  border: 1px solid #0ef;
+  border: 5px solid #0ef;
   box-shadow: 0 0 5px #0ef, inset 0 0 5px #0ef;
 }
 
@@ -28,6 +29,17 @@
   display: flex;
   font-size: 18px;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.education h1 {
+  width: 80%;
+}
+
+.education h2 {
+  width: 80%;
 }
 
 .icon-box {
@@ -73,4 +85,5 @@
   border: 1px solid #0ef;
   box-shadow: 0 0 15px #0ef, inset 0 0 5px #0ef;
   text-shadow: 0 0 5px #0ef;
+  cursor: pointer;
 }
