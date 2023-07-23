@@ -12,7 +12,7 @@ import {
   ListItem,
   Grid,
   Image,
-  CodePane,
+  Stepper,
   Link,
   CodeSpan,
   Appear
@@ -50,7 +50,7 @@ export default function Chromium() {
         </FlexBox>
       </Slide>
 
-      {/* 렌더링이란? - OK*/}
+      {/* 렌더링이란? - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>알아볼 내용</Heading>
         <UnorderedList fontSize="24px" color={TEXT_COLOR}>
@@ -297,6 +297,46 @@ export default function Chromium() {
       </Slide>
 
       {/* 웹 브라우저에 URL을 입력하면? */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>웹 브라우저에 URL을 입력하면?</Heading>
+        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+          <Appear elementNum={0}>
+            <ListItem>
+              <CodeSpan fontSize="26px">가장 먼저 HTML 파일을 전달받는다.</CodeSpan>
+            </ListItem>
+          </Appear>
+        </UnorderedList>
+        <Grid gridTemplateColumns="1fr 2fr">
+          <FlexBox alignItems="flex-start" flexDirection="column" marginLeft={50}>
+            <Text style={{ fontSize: "32px", color: { TEXT_COLOR } }}>
+              <Appear elementNum={1}>
+                CSR
+              </Appear>
+            </Text>
+            <Text style={{ fontSize: "32px", color: { TEXT_COLOR } }}>
+              <Appear elementNum={3} >
+                SSR
+              </Appear>
+            </Text>
+          </FlexBox>
+          <Stepper
+            defaultValue={[]}
+            values={[
+              ["https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png", 400],
+              ["https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png", 400],
+              ["https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png", 400],
+              ["https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png", 400],
+              ["https://d2.naver.com/content/images/2015/06/helloworld-59361-4.png", 500],
+            ]}
+          >
+            {(value, step) => (
+              <Appear>
+                <Image src={value && value[0]} width={value && value[1] || 400} />
+              </Appear>
+            )}
+          </Stepper>
+        </Grid>
+      </Slide>
 
       {/* DOM Tree 생성 과정 */}
 
