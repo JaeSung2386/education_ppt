@@ -19,7 +19,7 @@ import {
 } from "spectacle";
 import { WelcomePage } from "../../common"
 
-const SLIDE_BG_COLOR = "#edf2fb";
+const SLIDE_BG_COLOR = "white"; //"#edf2fb";
 const HEADER_COLOR = "#2f3e46";
 const HEADER_SIZE = "36px";
 const TEXT_COLOR = "#354f52"
@@ -46,7 +46,6 @@ export default function Chromium() {
             caption={"웹 브라우저 렌더링 (part 1)"}
             title={"1. 크로미움(Chromium)"}
             title2={"2. 렌더링 동작 과정"}
-            title3={"3. CSR, SSR, SSG"}
           />
         </FlexBox>
       </Slide>
@@ -85,12 +84,17 @@ export default function Chromium() {
             </Appear>
             <Appear elementNum={5}>
               <ListItem fontSize={26}>
-                서버사이드 렌더링은 서버에서 렌더링하는가?
+                UI가 변경되면 어떻게 되는가?
               </ListItem>
             </Appear>
             <Appear elementNum={6}>
               <ListItem fontSize={26}>
                 Virtual DOM을 사용하는 이유가 무엇일까?(다음 발표때...)
+              </ListItem>
+            </Appear>
+            <Appear elementNum={7}>
+              <ListItem fontSize={26}>
+                서버사이드 렌더링은 서버에서 렌더링하는가?(다다음 발표때...)
               </ListItem>
             </Appear>
           </UnorderedList>
@@ -122,20 +126,20 @@ export default function Chromium() {
               <UnorderedList fontSize="20px" color={TEXT_COLOR}>
                 <Appear elementNum={1}>
                   <ListItem fontSize={26}>
-                    구글 직원 외 프로젝트 참여가능
+                    2008년 9월 2일 출시
                   </ListItem>
                 </Appear>
                 <Appear elementNum={2}>
+                  <ListItem fontSize={26}>
+                    구글 직원 외 프로젝트 참여가능
+                  </ListItem>
+                </Appear>
+                <Appear elementNum={3}>
                   <ListItem fontSize={26}>
                     2019년부터 마이크로소프트에서 프로젝트 투자 및 참여
                   </ListItem>
                 </Appear>
               </UnorderedList>
-              <Appear elementNum={3}>
-                <ListItem>
-                  <CodeSpan fontSize="28px">2008년 9월 2일 출시</CodeSpan>
-                </ListItem>
-              </Appear>
               <Appear elementNum={4}>
                 <ListItem>
                   <CodeSpan fontSize="28px">프로젝트의 목적</CodeSpan>
@@ -205,65 +209,112 @@ export default function Chromium() {
         </UnorderedList>
       </Slide>
 
-      {/* 웹 브라우저 렌더링 표지 - OK*/}
+      {/* 웹 브라우저 렌더링 표지 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR}>
         <FlexBox height="100%" flexDirection="column">
           <WelcomePage
             caption={"렌더링 동작 과정"}
             title={"1. 렌더링 엔진의 동작 과정"}
             title2={"2. UI가 업데이트 되는 경우"}
-            title3={"3. 렌더링 엔진의 차이점"}
           />
         </FlexBox>
       </Slide>
 
-      {/* 웹 브라우저 렌더링 */}
+      {/* 웹 브라우저 렌더링 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>Web Browser Rendering</Heading>
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>Critical Rendering Path</Heading>
         <UnorderedList fontSize="24px" color={TEXT_COLOR}>
           <Appear elementNum={0}>
             <ListItem>
-              <CodeSpan fontSize="26px">Introduction to Graphs</CodeSpan>
+              <CodeSpan fontSize="26px">브라우저가 HTML, CSS, Javascript를 화면에 픽셀로 변화하는 일련의 단계</CodeSpan>
+            </ListItem>
+            <Image
+              src={
+                "https://i.stack.imgur.com/PWEik.png"
+              }
+              width={1200}
+            />
+          </Appear>
+          <Appear elementNum={1}>
+            <ListItem>
+              <CodeSpan fontSize="26px">Layout(Reflow): Render Tree의 노드들을 배치하고 크기를 계산</CodeSpan>
+            </ListItem>
+          </Appear>
+          <Appear elementNum={2}>
+            <ListItem>
+              <CodeSpan fontSize="26px">Paint(Repaint): 화면에 배치된 노드를 픽셀로 그려지는 과정</CodeSpan>
             </ListItem>
           </Appear>
         </UnorderedList>
       </Slide>
 
-      {/* CSR */}
+      {/* Webkit, Gecko 렌더링 과정 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>CSR(Client-Side-Rendering)</Heading>
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>Webkit, Gecko 렌더링 과정</Heading>
+        <Grid gridTemplateColumns="1fr 1fr">
+          <Box>
+            <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+              <ListItem>
+                <CodeSpan fontSize="28px">Webkit</CodeSpan>
+              </ListItem>
+              <Image
+                src={
+                  "https://d2.naver.com/content/images/2015/06/helloworld-59361-3.png"
+                }
+                width={600}
+              />
+            </UnorderedList>
+          </Box>
+          <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+            <ListItem>
+              <CodeSpan fontSize="28px">Gecko</CodeSpan>
+            </ListItem>
+            <Image
+              src={
+                "https://d2.naver.com/content/images/2015/06/helloworld-59361-4.png"
+              }
+              width={600}
+            />
+          </UnorderedList>
+        </Grid>
         <UnorderedList fontSize="24px" color={TEXT_COLOR}>
           <Appear elementNum={0}>
             <ListItem>
-              <CodeSpan fontSize="26px">Introduction to Graphs</CodeSpan>
+              <CodeSpan fontSize="26px">Webkit: HTML, CSS 파싱이 동시에 수행된다.</CodeSpan>
+            </ListItem>
+          </Appear>
+          <Appear elementNum={1}>
+            <ListItem>
+              <CodeSpan fontSize="26px">Gecko: HTML 파싱 후 CSS를 파싱한다.</CodeSpan>
+            </ListItem>
+          </Appear>
+          <Appear elementNum={2}>
+            <ListItem>
+              <CodeSpan fontSize="26px">렌더링 엔진마다 사용하는 용어가 다르다.</CodeSpan>
             </ListItem>
           </Appear>
         </UnorderedList>
       </Slide>
 
-      {/* SSR */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>SSR(Server-Side-Rendering)</Heading>
-        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
-          <Appear elementNum={0}>
-            <ListItem>
-              <CodeSpan fontSize="26px">Introduction to Graphs</CodeSpan>
-            </ListItem>
-          </Appear>
-        </UnorderedList>
-      </Slide>
+      {/* 웹 브라우저에 URL을 입력하면? */}
 
-      {/* SSG */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>SSG(Static-Site-Generation)</Heading>
-        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
-          <Appear elementNum={0}>
-            <ListItem>
-              <CodeSpan fontSize="26px">Introduction to Graphs</CodeSpan>
-            </ListItem>
-          </Appear>
-        </UnorderedList>
-      </Slide>
+      {/* DOM Tree 생성 과정 */}
+
+      {/* CSSOM Tree 생성 과정 */}
+
+      {/* Layout(Reflow) */}
+
+      {/* Paint(Repaint) */}
+
+      {/* Composition */}
+
+      {/* 사용자에 의해 UI가 변경되는 경우 */}
+
+      {/* Layout > Paint > Composite */}
+
+      {/* Paint > Composite */}
+
+      {/* Composite */}
 
       {/* 참고자료 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
