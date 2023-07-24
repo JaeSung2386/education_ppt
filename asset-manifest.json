@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/education_ppt/static/css/main.78e2c113.css",
-    "main.js": "/education_ppt/static/js/main.d341c9bd.js",
+    "main.js": "/education_ppt/static/js/main.139adaef.js",
     "index.html": "/education_ppt/index.html",
     "main.78e2c113.css.map": "/education_ppt/static/css/main.78e2c113.css.map",
-    "main.d341c9bd.js.map": "/education_ppt/static/js/main.d341c9bd.js.map"
+    "main.139adaef.js.map": "/education_ppt/static/js/main.139adaef.js.map"
   },
   "entrypoints": [
     "static/css/main.78e2c113.css",
-    "static/js/main.d341c9bd.js"
+    "static/js/main.139adaef.js"
   ]
 }
