@@ -424,20 +424,76 @@ export default function Chromium() {
       </Slide>
 
       {/* DOM Tree 생성 과정 */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          DOM Tree 생성 과정
+        </Heading>
+      </Slide>
 
       {/* CSSOM Tree 생성 과정 */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          CSSOM Tree 생성 과정
+        </Heading>
+      </Slide>
 
       {/* Layout(Reflow) */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          Layout(Reflow)
+        </Heading>
+      </Slide>
 
       {/* Paint(Repaint) */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          Paint(Repaint)
+        </Heading>
+      </Slide>
 
       {/* Composition */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          Composition
+        </Heading>
+      </Slide>
 
       {/* Layout > Paint > Composite */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          사용자에 의해 UI가 변경되는 경우 1. Layout &gt; Paint &gt; Composite
+        </Heading>
+      </Slide>
 
       {/* Paint > Composite */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          사용자에 의해 UI가 변경되는 경우 2. Paint &gt; Composite
+        </Heading>
+      </Slide>
 
       {/* Composite */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          사용자에 의해 UI가 변경되는 경우 3. Composite
+        </Heading>
+        {/* <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+          <Appear elementNum={0}>
+            <ListItem>
+              <CodeSpan fontSize="26px">
+                가장 먼저 HTML 파일을 전달받는다.
+              </CodeSpan>
+            </ListItem>
+          </Appear>
+        </UnorderedList> */}
+      </Slide>
+
+      {/* CSS Trigger */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          CSS Trigger
+        </Heading>
+      </Slide>
 
       {/* 참고자료 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
