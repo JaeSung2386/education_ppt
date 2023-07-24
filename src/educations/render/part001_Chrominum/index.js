@@ -488,13 +488,6 @@ export default function Chromium() {
         </UnorderedList> */}
       </Slide>
 
-      {/* CSS Trigger */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          CSS Trigger
-        </Heading>
-      </Slide>
-
       {/* 참고자료 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
