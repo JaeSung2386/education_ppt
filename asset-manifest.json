@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/education_ppt/index.html/static/css/main.78e2c113.css",
+    "main.js": "/education_ppt/index.html/static/js/main.42e8c7f3.js",
+    "index.html": "/education_ppt/index.html/index.html",
+    "main.78e2c113.css.map": "/education_ppt/index.html/static/css/main.78e2c113.css.map",
+    "main.42e8c7f3.js.map": "/education_ppt/index.html/static/js/main.42e8c7f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78e2c113.css",
+    "static/js/main.42e8c7f3.js"
+  ]
+}
