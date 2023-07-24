@@ -72,7 +72,7 @@ export default function Chromium() {
             </Appear>
           </UnorderedList>
           <Appear elementNum={2}>
-            <ListItem>
+            <ListItem paddingTop={15}>
               <CodeSpan fontSize="28px">
                 Front-End 개발자가 가질 수 있는 의문점
               </CodeSpan>
@@ -139,12 +139,12 @@ export default function Chromium() {
                 </Appear>
                 <Appear elementNum={3}>
                   <ListItem fontSize={26}>
-                    2019년부터 마이크로소프트에서 프로젝트 투자 및 참여
+                    2019년 마이크로소프트 프로젝트 참여 및 투자
                   </ListItem>
                 </Appear>
               </UnorderedList>
               <Appear elementNum={4}>
-                <ListItem>
+                <ListItem paddingTop={15}>
                   <CodeSpan fontSize="28px">프로젝트의 목적</CodeSpan>
                 </ListItem>
               </Appear>
@@ -157,7 +157,7 @@ export default function Chromium() {
                 </Appear>
               </UnorderedList>
               <Appear elementNum={7}>
-                <ListItem>
+                <ListItem paddingTop={15}>
                   <CodeSpan fontSize="28px">엔진</CodeSpan>
                 </ListItem>
               </Appear>
@@ -189,11 +189,75 @@ export default function Chromium() {
         </Grid>
       </Slide>
 
-      {/* 크로미움 기반의 웹 브라우저 */}
+      {/* 크로미움 기반의 웹 브라우저 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          크로미움 기반의 웹 브라우저
+          웹 브라우저의 엔진
         </Heading>
+        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+          <Appear elementNum={0}>
+            <ListItem>
+              <CodeSpan fontSize="28px">크롬(Chrome)</CodeSpan>
+            </ListItem>
+            <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+              <ListItem fontSize={26}>
+                <CodeSpan fontSize="26px">
+                  웹 브라우저 엔진: Blink(iOS는 Webkit), JS 엔진: V8
+                </CodeSpan>
+              </ListItem>
+            </UnorderedList>
+          </Appear>
+          <Appear elementNum={1}>
+            <ListItem paddingTop={15}>
+              <CodeSpan fontSize="28px">
+                마이크로소프트 엣지(Microsoft Edge)
+              </CodeSpan>
+            </ListItem>
+            <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+              <ListItem fontSize={26}>
+                <CodeSpan fontSize="26px">
+                  웹 브라우저 엔진: Blink(iOS는 Webkit), JS 엔진: Chakra
+                </CodeSpan>
+              </ListItem>
+            </UnorderedList>
+          </Appear>
+          <Appear elementNum={2}>
+            <ListItem paddingTop={15}>
+              <CodeSpan fontSize="28px">삼성 인터넷, 네이버 웨일</CodeSpan>
+            </ListItem>
+            <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+              <ListItem fontSize={26}>
+                <CodeSpan fontSize="26px">
+                  웹 브라우저 엔진: Blink, JS 엔진: V8
+                </CodeSpan>
+              </ListItem>
+            </UnorderedList>
+          </Appear>
+          <Appear elementNum={3}>
+            <ListItem paddingTop={15}>
+              <CodeSpan fontSize="28px">사파리(Safari)</CodeSpan>
+            </ListItem>
+            <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+              <ListItem fontSize={26}>
+                <CodeSpan fontSize="26px">
+                  웹 브라우저 엔진: Webkit, JS 엔진: JavaScriptCore
+                </CodeSpan>
+              </ListItem>
+            </UnorderedList>
+          </Appear>
+          <Appear elementNum={4}>
+            <ListItem paddingTop={15}>
+              <CodeSpan fontSize="28px">파이어폭스(Firefox)</CodeSpan>
+            </ListItem>
+            <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+              <ListItem fontSize={26}>
+                <CodeSpan fontSize="26px">
+                  웹 브라우저 엔진: Gecko(iOS는 Webkit), JS 엔진: Spidermonkey
+                </CodeSpan>
+              </ListItem>
+            </UnorderedList>
+          </Appear>
+        </UnorderedList>
       </Slide>
 
       {/* 웹 브라우저 렌더링 표지 - OK */}
@@ -309,7 +373,7 @@ export default function Chromium() {
             </ListItem>
           </Appear>
         </UnorderedList>
-        <Grid gridTemplateColumns="1fr 2fr">
+        {/* <Grid gridTemplateColumns="1fr 2fr">
           <FlexBox
             alignItems="flex-start"
             flexDirection="column"
@@ -356,7 +420,7 @@ export default function Chromium() {
               </Appear>
             )}
           </Stepper>
-        </Grid>
+        </Grid> */}
       </Slide>
 
       {/* DOM Tree 생성 과정 */}
@@ -368,8 +432,6 @@ export default function Chromium() {
       {/* Paint(Repaint) */}
 
       {/* Composition */}
-
-      {/* 사용자에 의해 UI가 변경되는 경우 */}
 
       {/* Layout > Paint > Composite */}
 
@@ -417,7 +479,7 @@ export default function Chromium() {
               </Link>
             </ListItem>
           </UnorderedList>
-          <ListItem>
+          <ListItem paddingTop={20}>
             <CodeSpan fontSize="28px">유튜브(Youtube)</CodeSpan>
           </ListItem>
           <UnorderedList fontSize="20px" color={TEXT_COLOR}>
