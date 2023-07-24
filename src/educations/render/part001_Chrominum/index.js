@@ -168,7 +168,8 @@ export default function Chromium() {
               <UnorderedList fontSize="20px" color={TEXT_COLOR}>
                 <Appear elementNum={8}>
                   <ListItem fontSize={26}>
-                    웹 브라우저 엔진: Webkit → Blink(2015 ~)
+                    <span style={{ color: "red" }}>웹 브라우저 엔진:</span>{" "}
+                    Webkit → (2015 ~ 현재)Blink
                   </ListItem>
                 </Appear>
                 <Appear elementNum={9}>
@@ -284,7 +285,7 @@ export default function Chromium() {
           <Appear elementNum={0}>
             <ListItem>
               <CodeSpan fontSize="26px">
-                브라우저가 HTML, CSS, Javascript를 화면에 픽셀로 변화하는 일련의
+                브라우저가 HTML, CSS, JavaScript를 화면에 픽셀로 변화하는 일련의
                 단계
               </CodeSpan>
             </ListItem>
@@ -498,7 +499,7 @@ export default function Chromium() {
         </UnorderedList>
       </Slide>
 
-      {/* Paint > Composite */}
+      {/* Paint > Composite - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           사용자에 의해 UI가 변경되는 경우
@@ -510,27 +511,20 @@ export default function Chromium() {
         </Heading>
         <UnorderedList fontSize="24px" color={TEXT_COLOR}>
           <Image src={ui_update_02} width={1200} />
-          {/* <Appear elementNum={1}>
+          <Appear elementNum={1}>
             <ListItem>
               <CodeSpan fontSize="26px">
-                새로운 HTML 요소가 추가되거나 기존 요소가 삭제되는 경우
+                CSS 속성이 변경되었으나 위치, 크기는 변경되지 않은 경우
               </CodeSpan>
             </ListItem>
           </Appear>
           <Appear elementNum={2}>
             <ListItem>
               <CodeSpan fontSize="26px">
-                HTML 요소의 크기나 위치가 변경되는 경우
+                이미지 변환, 투명도 조정, 텍스트 색상이 변경되는 경우
               </CodeSpan>
             </ListItem>
           </Appear>
-          <Appear elementNum={3}>
-            <ListItem>
-              <CodeSpan fontSize="26px">
-                웹 브라우저의 크기가 변경되는 경우(반응형 웹)
-              </CodeSpan>
-            </ListItem>
-          </Appear> */}
         </UnorderedList>
       </Slide>
 
@@ -570,7 +564,7 @@ export default function Chromium() {
                 <ListItem fontSize={26}>opacity 속성</ListItem>
                 <UnorderedList fontSize="20px" color={TEXT_COLOR}>
                   <ListItem fontSize={26}>
-                    Blink에서 paint와 composite 발생
+                    Blink에서 paint, composite 발생
                   </ListItem>
                   <ListItem fontSize={26}>Gecko에서 composite만 발생</ListItem>
                 </UnorderedList>
