@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/education_ppt/static/css/main.78e2c113.css",
-    "main.js": "/education_ppt/static/js/main.c0fc9917.js",
+    "main.js": "/education_ppt/static/js/main.46a9c4c6.js",
     "static/media/ui_update_01.png": "/education_ppt/static/media/ui_update_01.37d58e316ea2f8027178.png",
     "static/media/ui_update_02.png": "/education_ppt/static/media/ui_update_02.f5f6d88263019c777426.png",
     "static/media/ui_update_03.png": "/education_ppt/static/media/ui_update_03.04aaf714cc2faed50733.png",
     "index.html": "/education_ppt/index.html",
     "main.78e2c113.css.map": "/education_ppt/static/css/main.78e2c113.css.map",
-    "main.c0fc9917.js.map": "/education_ppt/static/js/main.c0fc9917.js.map"
+    "main.46a9c4c6.js.map": "/education_ppt/static/js/main.46a9c4c6.js.map"
   },
   "entrypoints": [
     "static/css/main.78e2c113.css",
-    "static/js/main.c0fc9917.js"
+    "static/js/main.46a9c4c6.js"
   ]
 }
