@@ -30,6 +30,7 @@ import convert_02 from "../../../img/convert_02.png";
 
 import laptop from "../../../img/laptop.png";
 import macbook_001 from "../../../img/macbook_001.png";
+import macbook_002 from "../../../img/macbook_002.png";
 
 const SLIDE_BG_COLOR = "white"; //"#edf2fb";
 const HEADER_COLOR = "#2f3e46";
@@ -315,7 +316,7 @@ export default function Chromium() {
           <Appear elementNum={2}>
             <ListItem>
               <CodeSpan fontSize="26px">
-                Paint(Repaint): 화면에 배치된 노드를 픽셀로 그려지는 과정
+                Paint(Repaint): 화면에 배치된 노드를 픽셀로 변환되는 과정
               </CodeSpan>
             </ListItem>
           </Appear>
@@ -397,34 +398,6 @@ export default function Chromium() {
         </FlexBox>
       </Slide>
 
-      {/* 변환(Bytes → Characters) */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          1. 변환(Bytes → Characters)
-        </Heading>
-      </Slide>
-
-      {/* 토큰화(Characters → Tokens) */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          2. 토큰화(Characters → Tokens)
-        </Heading>
-      </Slide>
-
-      {/* 렉싱(Tokens → Nodes) */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          3. 렉싱(Tokens → Nodes)
-        </Heading>
-      </Slide>
-
-      {/* DOM Tree 생성(Nodes → DOM) */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          4. DOM Tree 생성(Nodes → DOM)
-        </Heading>
-      </Slide>
-
       {/* CSSOM Tree 생성 과정 */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
@@ -487,32 +460,85 @@ body > p > span {
         </Heading>
       </Slide>
 
-      {/* Layout(Reflow) */}
+      {/* Layout(Reflow) - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Layout(Reflow)
         </Heading>
-        <Heading>
-          <Image src={macbook_001} width={600} />
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          Render Tree의 노드를{" "}
+          <span style={{ color: "red" }}>화면에 배치</span>하고{" "}
+          <span style={{ color: "red" }}>크기를 계산</span>한다.
         </Heading>
-      </Slide>
+        <Grid gridTemplateColumns="1fr 1fr">
+          <Box margin={"auto"} position={"relative"} bottom={50}>
+            <Image
+              src={
+                "https://www.moonkorea.dev/_next/image?url=%2Fassets%2Fmarkdown-image%2FBrowser-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81%2Frender-tree.png&w=1920&q=75"
+              }
+              width={550}
+              height={250}
+            />
+          </Box>
+          <Box margin={"auto"} position={"relative"} bottom={50}>
+            <Image
+              src={
+                macbook_001
+              }
+              width={550}
+            />
+          </Box>
+        </Grid>
+      </Slide >
 
-      {/* Paint(Repaint) */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+      {/* Paint(Repaint) - OK */}
+      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Paint(Repaint)
         </Heading>
-      </Slide>
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          화면에 배치된 노드가 <span style={{ color: "red" }}>픽셀로 변환되는 과정</span>이다.
+        </Heading>
+        <Grid gridTemplateColumns="1fr 1fr">
+          <Box margin={"auto"} position={"relative"} bottom={50}>
+            <Image
+              src={
+                "https://www.moonkorea.dev/_next/image?url=%2Fassets%2Fmarkdown-image%2FBrowser-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%A0%8C%EB%8D%94%EB%A7%81%2Frender-tree.png&w=1920&q=75"
+              }
+              width={550}
+              height={250}
+            />
+          </Box>
+          <Box margin={"auto"} position={"relative"} bottom={50}>
+            <Image
+              src={
+                macbook_002
+              }
+              width={550}
+            />
+          </Box>
+        </Grid>
+      </Slide >
 
       {/* Composition */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Composition
         </Heading>
-      </Slide>
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          픽셀로 변환된 레이어를 <span style={{ color: "red" }}>GPU</span>가{" "}<span style={{ color: "red" }}>화면에 표시</span>하는 단계다.
+        </Heading>
+        <Heading margin={"auto"}>
+          <Image
+            src={macbook_002}
+            width={700}
+            height={600}
+          />
+        </Heading>
+      </Slide >
 
       {/* Layout > Paint > Composite - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Layout → Paint → Composite
         </Heading>
@@ -545,10 +571,10 @@ body > p > span {
             </ListItem>
           </Appear>
         </UnorderedList>
-      </Slide>
+      </Slide >
 
       {/* Paint > Composite - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Paint → Composite
         </Heading>
@@ -574,10 +600,10 @@ body > p > span {
             </ListItem>
           </Appear>
         </UnorderedList>
-      </Slide>
+      </Slide >
 
       {/* Composite - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Composite
         </Heading>
@@ -620,10 +646,10 @@ body > p > span {
             </UnorderedList>
           </Appear>
         </UnorderedList>
-      </Slide>
+      </Slide >
 
       {/* 참고자료 - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           참고자료
         </Heading>
@@ -696,14 +722,14 @@ body > p > span {
             </ListItem>
           </UnorderedList>
         </UnorderedList>
-      </Slide>
+      </Slide >
 
       {/* End - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR}>
+      < Slide backgroundColor={SLIDE_BG_COLOR} >
         <FlexBox height="100%" flexDirection="column">
           <WelcomePage caption={"감사합니다."} />
         </FlexBox>
-      </Slide>
+      </Slide >
     </>
   );
 }
