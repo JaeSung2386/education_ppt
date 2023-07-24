@@ -16,12 +16,20 @@ import {
   Link,
   CodeSpan,
   Appear,
+  CodePane,
+  Quote,
 } from "spectacle";
 import { WelcomePage } from "../../common";
 
 import ui_update_01 from "../../../img/ui_update_01.png";
 import ui_update_02 from "../../../img/ui_update_02.png";
 import ui_update_03 from "../../../img/ui_update_03.png";
+
+import convert_01 from "../../../img/convert_01.png";
+import convert_02 from "../../../img/convert_02.png";
+
+import laptop from "../../../img/laptop.png";
+import macbook_001 from "../../../img/macbook_001.png";
 
 const SLIDE_BG_COLOR = "white"; //"#edf2fb";
 const HEADER_COLOR = "#2f3e46";
@@ -194,7 +202,7 @@ export default function Chromium() {
         </Grid>
       </Slide>
 
-      {/* 크로미움 기반의 웹 브라우저 - OK */}
+      {/* 웹 브라우저 엔진 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           웹 브라우저의 엔진
@@ -207,7 +215,9 @@ export default function Chromium() {
             <UnorderedList fontSize="20px" color={TEXT_COLOR}>
               <ListItem fontSize={26}>
                 <CodeSpan fontSize="26px">
-                  웹 브라우저 엔진: Blink(iOS는 Webkit), JS 엔진: V8
+                  웹 브라우저 엔진:{" "}
+                  <span style={{ color: TEXT_HILGHLIGHT_COLOR }}>Blink</span>
+                  (iOS는 Webkit), JS 엔진: V8
                 </CodeSpan>
               </ListItem>
             </UnorderedList>
@@ -221,7 +231,9 @@ export default function Chromium() {
             <UnorderedList fontSize="20px" color={TEXT_COLOR}>
               <ListItem fontSize={26}>
                 <CodeSpan fontSize="26px">
-                  웹 브라우저 엔진: Blink(iOS는 Webkit), JS 엔진: Chakra
+                  웹 브라우저 엔진:{" "}
+                  <span style={{ color: TEXT_HILGHLIGHT_COLOR }}>Blink</span>
+                  (iOS는 Webkit), JS 엔진: Chakra
                 </CodeSpan>
               </ListItem>
             </UnorderedList>
@@ -233,7 +245,9 @@ export default function Chromium() {
             <UnorderedList fontSize="20px" color={TEXT_COLOR}>
               <ListItem fontSize={26}>
                 <CodeSpan fontSize="26px">
-                  웹 브라우저 엔진: Blink, JS 엔진: V8
+                  웹 브라우저 엔진:{" "}
+                  <span style={{ color: TEXT_HILGHLIGHT_COLOR }}>Blink</span>,
+                  JS 엔진: V8
                 </CodeSpan>
               </ListItem>
             </UnorderedList>
@@ -323,21 +337,23 @@ export default function Chromium() {
                 src={
                   "https://d2.naver.com/content/images/2015/06/helloworld-59361-3.png"
                 }
-                width={600}
+                width={550}
               />
             </UnorderedList>
           </Box>
-          <UnorderedList fontSize="24px" color={TEXT_COLOR}>
-            <ListItem>
-              <CodeSpan fontSize="28px">Gecko</CodeSpan>
-            </ListItem>
-            <Image
-              src={
-                "https://d2.naver.com/content/images/2015/06/helloworld-59361-4.png"
-              }
-              width={600}
-            />
-          </UnorderedList>
+          <Box>
+            <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+              <ListItem>
+                <CodeSpan fontSize="28px">Gecko</CodeSpan>
+              </ListItem>
+              <Image
+                src={
+                  "https://d2.naver.com/content/images/2015/06/helloworld-59361-4.png"
+                }
+                width={550}
+              />
+            </UnorderedList>
+          </Box>
         </Grid>
         <UnorderedList fontSize="24px" color={TEXT_COLOR}>
           <Appear elementNum={0}>
@@ -364,81 +380,110 @@ export default function Chromium() {
         </UnorderedList>
       </Slide>
 
-      {/* 웹 브라우저에 URL을 입력하면? */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          웹 브라우저에 URL을 입력하면?
-        </Heading>
-        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
-          <Appear elementNum={0}>
-            <ListItem>
-              <CodeSpan fontSize="26px">
-                가장 먼저 HTML 파일을 전달받는다.
-              </CodeSpan>
-            </ListItem>
-          </Appear>
-        </UnorderedList>
-        {/* <Grid gridTemplateColumns="1fr 2fr">
-          <FlexBox
-            alignItems="flex-start"
-            flexDirection="column"
-            marginLeft={50}
-          >
-            <Text style={{ fontSize: "32px", color: { TEXT_COLOR } }}>
-              <Appear elementNum={1}>CSR</Appear>
-            </Text>
-            <Text style={{ fontSize: "32px", color: { TEXT_COLOR } }}>
-              <Appear elementNum={3}>SSR</Appear>
-            </Text>
-          </FlexBox>
-          <Stepper
-            defaultValue={[]}
-            values={[
-              [
-                "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png",
-                400,
-              ],
-              [
-                "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png",
-                400,
-              ],
-              [
-                "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png",
-                400,
-              ],
-              [
-                "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png",
-                400,
-              ],
-              [
-                "https://d2.naver.com/content/images/2015/06/helloworld-59361-4.png",
-                500,
-              ],
-            ]}
-          >
-            {(value, step) => (
-              <Appear>
-                <Image
-                  src={value && value[0]}
-                  width={(value && value[1]) || 400}
-                />
-              </Appear>
-            )}
-          </Stepper>
-        </Grid> */}
-      </Slide>
-
       {/* DOM Tree 생성 과정 */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           DOM Tree 생성 과정
+        </Heading>
+        <FlexBox height="100%" flexDirection="column">
+          <Heading margin="0px" fontSize="150px">
+            <Image
+              src={
+                "https://miro.medium.com/v2/resize:fit:720/format:webp/1*EU3XjJvJ8kg2kHUTWdMQVw.png"
+              }
+              width={1000}
+            />
+          </Heading>
+        </FlexBox>
+      </Slide>
+
+      {/* 변환(Bytes → Characters) */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          1. 변환(Bytes → Characters)
+        </Heading>
+      </Slide>
+
+      {/* 토큰화(Characters → Tokens) */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          2. 토큰화(Characters → Tokens)
+        </Heading>
+      </Slide>
+
+      {/* 렉싱(Tokens → Nodes) */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          3. 렉싱(Tokens → Nodes)
+        </Heading>
+      </Slide>
+
+      {/* DOM Tree 생성(Nodes → DOM) */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          4. DOM Tree 생성(Nodes → DOM)
         </Heading>
       </Slide>
 
       {/* CSSOM Tree 생성 과정 */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          CSSOM Tree 생성 과정
+          CSSOM Tree 생성
+        </Heading>
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          DOM Tree 생성 과정과 동일하다.
+        </Heading>
+        <Grid gridTemplateColumns="1fr 1fr">
+          <Box>
+            <CodePane language="css" showLineNumbers={false}>{`
+body {
+  font-size: 16px;
+}
+
+body > p {
+  font-weight: bold;
+}
+
+body > span {
+  color: red;
+}
+
+body img {
+  float: right;
+}
+
+body > p > span {
+  display: none;
+}
+        `}</CodePane>
+          </Box>
+          <Box marginTop={"auto"} marginBottom={"auto"}>
+            <Image
+              src={
+                "https://miro.medium.com/v2/resize:fit:640/format:webp/1*HxOuFyj7vIkdb3ZvzR6MVA.png"
+              }
+              width={600}
+            />
+          </Box>
+        </Grid>
+      </Slide>
+
+      {/* Render Tree 생성 과정 */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          Render Tree 생성
+        </Heading>
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          <span style={{ color: "red" }}>화면에 표시</span>
+          되는 노드들이 Render Tree에 포함된다.
+        </Heading>
+        <Heading margin={0}>
+          <Image
+            src={
+              "https://miro.medium.com/v2/resize:fit:720/format:webp/1*FXGPMAFT3lXjMupFQOY4jg.png"
+            }
+            width={900}
+          />
         </Heading>
       </Slide>
 
@@ -446,6 +491,9 @@ export default function Chromium() {
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Layout(Reflow)
+        </Heading>
+        <Heading>
+          <Image src={macbook_001} width={600} />
         </Heading>
       </Slide>
 
@@ -466,7 +514,7 @@ export default function Chromium() {
       {/* Layout > Paint > Composite - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          사용자에 의해 UI가 변경되는 경우
+          Layout → Paint → Composite
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           JavaScript 코드에 의해 UI가 변경되어{" "}
@@ -502,7 +550,7 @@ export default function Chromium() {
       {/* Paint > Composite - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          사용자에 의해 UI가 변경되는 경우
+          Paint → Composite
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           JavaScript 코드에 의해 UI가 변경되었지만,{" "}
@@ -531,7 +579,7 @@ export default function Chromium() {
       {/* Composite - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          사용자에 의해 UI가 변경되는 경우
+          Composite
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           JavaScript 코드에 의해 UI가 변경되었지만,{" "}
@@ -564,9 +612,9 @@ export default function Chromium() {
                 <ListItem fontSize={26}>opacity 속성</ListItem>
                 <UnorderedList fontSize="20px" color={TEXT_COLOR}>
                   <ListItem fontSize={26}>
-                    Blink에서 paint, composite 발생
+                    Blink에서 Paint, Composite 발생
                   </ListItem>
-                  <ListItem fontSize={26}>Gecko에서 composite만 발생</ListItem>
+                  <ListItem fontSize={26}>Gecko에서 Composite만 발생</ListItem>
                 </UnorderedList>
               </Appear>
             </UnorderedList>
