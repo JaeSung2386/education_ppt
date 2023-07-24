@@ -19,9 +19,13 @@ import {
 } from "spectacle";
 import { WelcomePage } from "../../common";
 
+import ui_update_01 from "../../../img/ui_update_01.png";
+import ui_update_02 from "../../../img/ui_update_02.png";
+import ui_update_03 from "../../../img/ui_update_03.png";
+
 const SLIDE_BG_COLOR = "white"; //"#edf2fb";
 const HEADER_COLOR = "#2f3e46";
-const HEADER_SIZE = "36px";
+const HEADER_SIZE = "40px";
 const TEXT_COLOR = "#354f52";
 const TEXT_HILGHLIGHT_COLOR = "#5fa8d3";
 
@@ -271,7 +275,7 @@ export default function Chromium() {
         </FlexBox>
       </Slide>
 
-      {/* 웹 브라우저 렌더링 - OK */}
+      {/* Critical Rendering Path - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Critical Rendering Path
@@ -458,34 +462,122 @@ export default function Chromium() {
         </Heading>
       </Slide>
 
-      {/* Layout > Paint > Composite */}
+      {/* Layout > Paint > Composite - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          사용자에 의해 UI가 변경되는 경우 1. Layout &gt; Paint &gt; Composite
+          사용자에 의해 UI가 변경되는 경우
         </Heading>
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          JavaScript 코드에 의해 UI가 변경되어{" "}
+          <span style={{ color: "red" }}>Layout 과정이 발생</span>
+          하는 경우
+        </Heading>
+        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+          <Image src={ui_update_01} width={1200} />
+          <Appear elementNum={0}>
+            <ListItem>
+              <CodeSpan fontSize="26px">
+                새로운 HTML 요소가 추가되거나 기존 요소가 삭제되는 경우
+              </CodeSpan>
+            </ListItem>
+          </Appear>
+          <Appear elementNum={1}>
+            <ListItem>
+              <CodeSpan fontSize="26px">
+                요소의 크기나 위치가 변경되는 경우
+              </CodeSpan>
+            </ListItem>
+          </Appear>
+          <Appear elementNum={2}>
+            <ListItem>
+              <CodeSpan fontSize="26px">
+                웹 브라우저의 크기가 변경되는 경우(반응형 웹)
+              </CodeSpan>
+            </ListItem>
+          </Appear>
+        </UnorderedList>
       </Slide>
 
       {/* Paint > Composite */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          사용자에 의해 UI가 변경되는 경우 2. Paint &gt; Composite
+          사용자에 의해 UI가 변경되는 경우
         </Heading>
-      </Slide>
-
-      {/* Composite */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          사용자에 의해 UI가 변경되는 경우 3. Composite
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          JavaScript 코드에 의해 UI가 변경되었지만,{" "}
+          <span style={{ color: "red" }}>Layout 과정을 생략</span>
+          하는 경우
         </Heading>
-        {/* <UnorderedList fontSize="24px" color={TEXT_COLOR}>
-          <Appear elementNum={0}>
+        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+          <Image src={ui_update_02} width={1200} />
+          {/* <Appear elementNum={1}>
             <ListItem>
               <CodeSpan fontSize="26px">
-                가장 먼저 HTML 파일을 전달받는다.
+                새로운 HTML 요소가 추가되거나 기존 요소가 삭제되는 경우
               </CodeSpan>
             </ListItem>
           </Appear>
-        </UnorderedList> */}
+          <Appear elementNum={2}>
+            <ListItem>
+              <CodeSpan fontSize="26px">
+                HTML 요소의 크기나 위치가 변경되는 경우
+              </CodeSpan>
+            </ListItem>
+          </Appear>
+          <Appear elementNum={3}>
+            <ListItem>
+              <CodeSpan fontSize="26px">
+                웹 브라우저의 크기가 변경되는 경우(반응형 웹)
+              </CodeSpan>
+            </ListItem>
+          </Appear> */}
+        </UnorderedList>
+      </Slide>
+
+      {/* Composite - OK */}
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
+        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
+          사용자에 의해 UI가 변경되는 경우
+        </Heading>
+        <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
+          JavaScript 코드에 의해 UI가 변경되었지만,{" "}
+          <span style={{ color: "red" }}>Layout, Paint 과정을 생략</span>
+          하는 경우
+        </Heading>
+        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
+          <Image src={ui_update_03} width={1200} />
+          <Appear elementNum={0}>
+            <ListItem>
+              <CodeSpan fontSize="26px">CSS 특정 속성이 변경되는 경우</CodeSpan>
+            </ListItem>
+          </Appear>
+          <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+            <Appear elementNum={1}>
+              <ListItem fontSize={26}>
+                transform, opacity, will-change, z-index 등...
+              </ListItem>
+            </Appear>
+          </UnorderedList>
+          <Appear elementNum={2}>
+            <ListItem>
+              <CodeSpan fontSize="26px">주의사항!</CodeSpan>
+            </ListItem>
+            <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+              <ListItem fontSize={26}>
+                웹 브라우저 렌더링마다 다르게 동작한다.
+              </ListItem>
+              <Appear elementNum={3}>
+                <ListItem fontSize={26}>opacity 속성</ListItem>
+                <UnorderedList fontSize="20px" color={TEXT_COLOR}>
+                  <ListItem fontSize={26}>
+                    Blink에서 paint와 composite 발생
+                  </ListItem>
+                  <ListItem fontSize={26}>Gecko에서 composite만 발생</ListItem>
+                </UnorderedList>
+              </Appear>
+            </UnorderedList>
+          </Appear>
+        </UnorderedList>
       </Slide>
 
       {/* 참고자료 - OK */}
