@@ -25,10 +25,6 @@ import ui_update_01 from "../../../img/ui_update_01.png";
 import ui_update_02 from "../../../img/ui_update_02.png";
 import ui_update_03 from "../../../img/ui_update_03.png";
 
-import convert_01 from "../../../img/convert_01.png";
-import convert_02 from "../../../img/convert_02.png";
-
-import laptop from "../../../img/laptop.png";
 import macbook_001 from "../../../img/macbook_001.png";
 import macbook_002 from "../../../img/macbook_002.png";
 
@@ -37,17 +33,6 @@ const HEADER_COLOR = "#2f3e46";
 const HEADER_SIZE = "40px";
 const TEXT_COLOR = "#354f52";
 const TEXT_HILGHLIGHT_COLOR = "#5fa8d3";
-
-const SourceLink = ({ text, url, desc }) => (
-  <>
-    <Text fontSize={30}>
-      {text} <br />{" "}
-      <Link fontSize={24} href={url} color="gray">
-        {desc}
-      </Link>
-    </Text>
-  </>
-);
 
 export default function Chromium() {
   return (
@@ -307,24 +292,22 @@ export default function Chromium() {
         </UnorderedList>
       </Slide>
 
-      {/* DOM Tree 생성 과정 */}
+      {/* DOM Tree 생성 과정 - OK  */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           DOM Tree 생성 과정
         </Heading>
         <FlexBox height="100%" flexDirection="column">
-          <Heading margin="0px" fontSize="150px">
-            <Image
-              src={
-                "https://miro.medium.com/v2/resize:fit:720/format:webp/1*EU3XjJvJ8kg2kHUTWdMQVw.png"
-              }
-              width={1000}
-            />
-          </Heading>
+          <Image
+            src={
+              "https://miro.medium.com/v2/resize:fit:720/format:webp/1*EU3XjJvJ8kg2kHUTWdMQVw.png"
+            }
+            width={1000}
+          />
         </FlexBox>
       </Slide>
 
-      {/* CSSOM Tree 생성 과정 */}
+      {/* CSSOM Tree 생성 과정 - OK  */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           CSSOM Tree 생성
@@ -332,42 +315,17 @@ export default function Chromium() {
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           DOM Tree 생성 과정과 동일하다.
         </Heading>
-        <Grid gridTemplateColumns="1fr 1fr">
-          <Box>
-            <CodePane language="css" showLineNumbers={false}>{`
-body {
-  font-size: 16px;
-}
-
-body > p {
-  font-weight: bold;
-}
-
-body > span {
-  color: red;
-}
-
-body img {
-  float: right;
-}
-
-body > p > span {
-  display: none;
-}
-        `}</CodePane>
-          </Box>
-          <Box marginTop={"auto"} marginBottom={"auto"}>
-            <Image
-              src={
-                "https://miro.medium.com/v2/resize:fit:640/format:webp/1*HxOuFyj7vIkdb3ZvzR6MVA.png"
-              }
-              width={600}
-            />
-          </Box>
-        </Grid>
+        <FlexBox height="100%" flexDirection="column">
+          <Image
+            src={
+              "https://miro.medium.com/v2/resize:fit:640/format:webp/1*HxOuFyj7vIkdb3ZvzR6MVA.png"
+            }
+            width={800}
+          />
+        </FlexBox>
       </Slide>
 
-      {/* Render Tree 생성 과정 */}
+      {/* Render Tree 생성 과정 - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Render Tree 생성
@@ -376,14 +334,14 @@ body > p > span {
           <span style={{ color: "red" }}>화면에 표시</span>
           되는 노드들이 Render Tree에 포함된다.
         </Heading>
-        <Heading margin={0}>
+        <FlexBox height="100%" flexDirection="column">
           <Image
             src={
               "https://miro.medium.com/v2/resize:fit:720/format:webp/1*FXGPMAFT3lXjMupFQOY4jg.png"
             }
             width={900}
           />
-        </Heading>
+        </FlexBox>
       </Slide>
 
       {/* Layout(Reflow) - OK */}
@@ -598,6 +556,15 @@ body > p > span {
               >
                 ITWorld Korea - “크롬도 엣지도 모두 한 뿌리” 구글 크로미움
                 브라우저의 정체
+              </Link>
+            </ListItem>
+            <ListItem fontSize={26}>
+              <Link
+                href="https://ryong.oopy.io/b93745cc-41da-4e6b-be02-e0a6906a4b53"
+                fontSize={26}
+                color={TEXT_HILGHLIGHT_COLOR}
+              >
+                브라우저의 렌더링 과정
               </Link>
             </ListItem>
           </UnorderedList>
