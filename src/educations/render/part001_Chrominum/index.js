@@ -63,69 +63,6 @@ export default function Chromium() {
         </FlexBox>
       </Slide>
 
-      {/* 렌더링이란? - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
-        <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
-          알아볼 내용
-        </Heading>
-        <UnorderedList fontSize="24px" color={TEXT_COLOR}>
-          <Appear elementNum={0}>
-            <ListItem>
-              <CodeSpan fontSize="28px">렌더링이란?</CodeSpan>
-            </ListItem>
-          </Appear>
-          <UnorderedList fontSize="20px" color={TEXT_COLOR}>
-            <Appear elementNum={1}>
-              <ListItem fontSize={26}>
-                <CodeSpan fontSize="26px">
-                  HTML, CSS, JavaScript 등 개발자가 작성한 문서가 브라우저에서
-                  출력되는 과정
-                </CodeSpan>
-              </ListItem>
-            </Appear>
-          </UnorderedList>
-          <Appear elementNum={2}>
-            <ListItem paddingTop={15}>
-              <CodeSpan fontSize="28px">
-                Front-End 개발자가 가질 수 있는 의문점
-              </CodeSpan>
-            </ListItem>
-          </Appear>
-          <UnorderedList fontSize="20px" color={TEXT_COLOR}>
-            <Appear elementNum={3}>
-              <ListItem fontSize={26}>주체가 어떻게 되는가?</ListItem>
-            </Appear>
-            <Appear elementNum={4}>
-              <ListItem fontSize={26}>어떻게 해석하는가?</ListItem>
-            </Appear>
-            <Appear elementNum={5}>
-              <ListItem fontSize={26}>UI가 변경되면 어떻게 되는가?</ListItem>
-            </Appear>
-            <Appear elementNum={6}>
-              <ListItem fontSize={26}>
-                Virtual DOM을 사용하는 이유가 무엇일까?(다음 발표때...)
-              </ListItem>
-            </Appear>
-            <Appear elementNum={7}>
-              <ListItem fontSize={26}>
-                서버사이드 렌더링은 서버에서 렌더링하는가?(다다음 발표때...)
-              </ListItem>
-            </Appear>
-          </UnorderedList>
-        </UnorderedList>
-      </Slide>
-
-      {/* 크로미움 표지 - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR}>
-        <FlexBox height="100%" flexDirection="column">
-          <WelcomePage
-            caption={"크로미움(Chromium)"}
-            title={"1. 크로미움이란?"}
-            title2={"2. 크로미움 기반의 웹 브라우저"}
-          />
-        </FlexBox>
-      </Slide>
-
       {/* 크로미움이란? - OK */}
       <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
@@ -147,7 +84,7 @@ export default function Chromium() {
                 </Appear>
                 <Appear elementNum={2}>
                   <ListItem fontSize={26}>
-                    구글 직원 외 프로젝트 참여가능
+                    경쟁사 개발자도 프로젝트 참여가능
                   </ListItem>
                 </Appear>
                 <Appear elementNum={3}>
@@ -278,17 +215,6 @@ export default function Chromium() {
             </UnorderedList>
           </Appear>
         </UnorderedList>
-      </Slide>
-
-      {/* 웹 브라우저 렌더링 표지 - OK */}
-      <Slide backgroundColor={SLIDE_BG_COLOR}>
-        <FlexBox height="100%" flexDirection="column">
-          <WelcomePage
-            caption={"렌더링 동작 과정"}
-            title={"1. 렌더링 엔진의 동작 과정"}
-            title2={"2. UI가 업데이트 되는 경우"}
-          />
-        </FlexBox>
       </Slide>
 
       {/* Critical Rendering Path - OK */}
@@ -466,9 +392,8 @@ body > p > span {
           Layout(Reflow)
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
-          Render Tree의 노드를{" "}
-          <span style={{ color: "red" }}>화면에 배치</span>하고{" "}
-          <span style={{ color: "red" }}>크기를 계산</span>한다.
+          Render Tree의 노드를 <span style={{ color: "red" }}>화면에 배치</span>
+          하고 <span style={{ color: "red" }}>크기를 계산</span>한다.
         </Heading>
         <Grid gridTemplateColumns="1fr 1fr">
           <Box margin={"auto"} position={"relative"} bottom={50}>
@@ -481,23 +406,19 @@ body > p > span {
             />
           </Box>
           <Box margin={"auto"} position={"relative"} bottom={50}>
-            <Image
-              src={
-                macbook_001
-              }
-              width={550}
-            />
+            <Image src={macbook_001} width={550} />
           </Box>
         </Grid>
-      </Slide >
+      </Slide>
 
       {/* Paint(Repaint) - OK */}
-      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Paint(Repaint)
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
-          화면에 배치된 노드가 <span style={{ color: "red" }}>픽셀로 변환되는 과정</span>이다.
+          화면에 배치된 노드가{" "}
+          <span style={{ color: "red" }}>픽셀로 변환되는 과정</span>이다.
         </Heading>
         <Grid gridTemplateColumns="1fr 1fr">
           <Box margin={"auto"} position={"relative"} bottom={50}>
@@ -510,35 +431,27 @@ body > p > span {
             />
           </Box>
           <Box margin={"auto"} position={"relative"} bottom={50}>
-            <Image
-              src={
-                macbook_002
-              }
-              width={550}
-            />
+            <Image src={macbook_002} width={550} />
           </Box>
         </Grid>
-      </Slide >
+      </Slide>
 
       {/* Composition */}
-      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Composition
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
-          픽셀로 변환된 레이어를 <span style={{ color: "red" }}>GPU</span>가{" "}<span style={{ color: "red" }}>화면에 표시</span>하는 단계다.
+          픽셀로 변환된 레이어를 <span style={{ color: "red" }}>GPU</span>가{" "}
+          <span style={{ color: "red" }}>화면에 표시</span>하는 단계다.
         </Heading>
         <Heading margin={"auto"}>
-          <Image
-            src={macbook_002}
-            width={700}
-            height={600}
-          />
+          <Image src={macbook_002} width={700} height={600} />
         </Heading>
-      </Slide >
+      </Slide>
 
       {/* Layout > Paint > Composite - OK */}
-      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Layout → Paint → Composite
         </Heading>
@@ -571,10 +484,10 @@ body > p > span {
             </ListItem>
           </Appear>
         </UnorderedList>
-      </Slide >
+      </Slide>
 
       {/* Paint > Composite - OK */}
-      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Paint → Composite
         </Heading>
@@ -600,10 +513,10 @@ body > p > span {
             </ListItem>
           </Appear>
         </UnorderedList>
-      </Slide >
+      </Slide>
 
       {/* Composite - OK */}
-      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           Composite
         </Heading>
@@ -646,10 +559,10 @@ body > p > span {
             </UnorderedList>
           </Appear>
         </UnorderedList>
-      </Slide >
+      </Slide>
 
       {/* 참고자료 - OK */}
-      < Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide" >
+      <Slide backgroundColor={SLIDE_BG_COLOR} transitionEffect="slide">
         <Heading color={HEADER_COLOR} fontSize={HEADER_SIZE}>
           참고자료
         </Heading>
@@ -722,14 +635,14 @@ body > p > span {
             </ListItem>
           </UnorderedList>
         </UnorderedList>
-      </Slide >
+      </Slide>
 
       {/* End - OK */}
-      < Slide backgroundColor={SLIDE_BG_COLOR} >
+      <Slide backgroundColor={SLIDE_BG_COLOR}>
         <FlexBox height="100%" flexDirection="column">
           <WelcomePage caption={"감사합니다."} />
         </FlexBox>
-      </Slide >
+      </Slide>
     </>
   );
 }
