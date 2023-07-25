@@ -313,7 +313,7 @@ export default function Chromium() {
           CSSOM Tree 생성
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
-          DOM Tree 생성 과정과 동일하다.
+          DOM Tree 생성 과정과 동일
         </Heading>
         <FlexBox height="100%" flexDirection="column">
           <Image
@@ -332,7 +332,7 @@ export default function Chromium() {
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           <span style={{ color: "red" }}>화면에 표시</span>
-          되는 노드들이 Render Tree에 포함된다.
+          되는 노드들을 Render Tree에 포함
         </Heading>
         <FlexBox height="100%" flexDirection="column">
           <Image
@@ -351,7 +351,7 @@ export default function Chromium() {
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           Render Tree의 노드를 <span style={{ color: "red" }}>화면에 배치</span>
-          하고 <span style={{ color: "red" }}>크기를 계산</span>한다.
+          하고 <span style={{ color: "red" }}>크기를 계산</span>
         </Heading>
         <Grid gridTemplateColumns="1fr 1fr">
           <Box margin={"auto"} position={"relative"} bottom={50}>
@@ -376,7 +376,7 @@ export default function Chromium() {
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           화면에 배치된 노드가{" "}
-          <span style={{ color: "red" }}>픽셀로 변환되는 과정</span>이다.
+          <span style={{ color: "red" }}>픽셀로 변환되는 과정</span>
         </Heading>
         <Grid gridTemplateColumns="1fr 1fr">
           <Box margin={"auto"} position={"relative"} bottom={50}>
@@ -401,11 +401,11 @@ export default function Chromium() {
         </Heading>
         <Heading margin="0px" fontSize={"30px"} color={HEADER_COLOR}>
           픽셀로 변환된 레이어를 <span style={{ color: "red" }}>GPU</span>가{" "}
-          <span style={{ color: "red" }}>화면에 표시</span>하는 단계다.
+          <span style={{ color: "red" }}>화면에 표시</span>하는 단계
         </Heading>
-        <Heading margin={"auto"}>
+        <FlexBox height="100%" flexDirection="column" paddingBottom={250}>
           <Image src={macbook_002} width={700} height={600} />
-        </Heading>
+        </FlexBox>
       </Slide>
 
       {/* Layout > Paint > Composite - OK */}
